@@ -31,6 +31,7 @@
       color: var(--dark);
       scroll-behavior: smooth;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden; /* prevent horizontal scroll on mobiles */
     }
 
     a { text-decoration: none; color: inherit; }
@@ -71,7 +72,7 @@
       display: flex;
       align-items: center;
       gap: 0.55rem;
-      white-space: nowrap;
+      /* removed white-space: nowrap to avoid overflow on mobiles */
     }
 
     .logo-mark {
@@ -912,30 +913,46 @@
       font-size: 0.86rem;
     }
 
-    /* Floating WhatsApp */
-    .floating-whatsapp {
+    /* Floating buttons */
+    .floating-whatsapp,
+    .floating-instagram {
       position: fixed;
-      right: 22px;
-      bottom: 26px;
-      background: #16a34a;
-      color: var(--white);
+      right: 18px;
       border-radius: 50%;
       width: 56px;
       height: 56px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 16px 40px rgba(22, 163, 74, 0.6);
+      color: var(--white);
       font-size: 2rem;
       cursor: pointer;
       transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
       z-index: 2000;
     }
 
+    .floating-whatsapp {
+      bottom: 22px;
+      background: #16a34a;
+      box-shadow: 0 16px 40px rgba(22, 163, 74, 0.6);
+    }
+
     .floating-whatsapp:hover {
       background: #15803d;
       transform: translateY(-2px);
       box-shadow: 0 20px 48px rgba(22, 163, 74, 0.7);
+    }
+
+    .floating-instagram {
+      bottom: 90px;
+      background: radial-gradient(circle at 30% 20%, #fdf497 0, #fd5949 40%, #d6249f 70%, #285AEB 100%);
+      box-shadow: 0 16px 40px rgba(220, 38, 38, 0.6);
+      font-size: 1.8rem;
+    }
+
+    .floating-instagram:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 48px rgba(220, 38, 38, 0.8);
     }
 
     /* DARK MODE OVERRIDES */
@@ -1085,6 +1102,12 @@
       .header-right {
         gap: 0.3rem;
       }
+
+      /* make logo slightly smaller on small screens */
+      .logo {
+        font-size: 1.2rem;
+        letter-spacing: 0.08em;
+      }
     }
 
     @media (max-width: 650px) {
@@ -1154,7 +1177,7 @@
     </div>
   </header>
 
-  <!-- HERO (summary card removed as requested) -->
+  <!-- HERO -->
   <section id="home" class="hero">
     <div class="hero-inner">
       <div class="hero-content">
@@ -1704,6 +1727,15 @@
     title="Chat via WhatsApp"
     target="_blank">
     <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Floating Instagram -->
+  <a
+    href="https://www.instagram.com/gubbi.1481?igsh=MTBmbGJwZGszMjg1dA=="
+    class="floating-instagram"
+    title="Instagram profile"
+    target="_blank">
+    <i class="fa-brands fa-instagram"></i>
   </a>
 </body>
 </html>
