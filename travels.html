@@ -2,20 +2,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nethravati Travels</title>
+  <title>NM Travels</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     :root {
-      /* Royal light theme palette */
-      --primary: #1d4ed8;          /* Deep blue */
-      --accent: #f59e0b;           /* Warm golden accent */
-      --dark: #0b1120;             /* Rich navy text */
-      --gray: #f3f4f6;             /* Soft background */
+      /* Karnataka flag inspired palette: Bright Yellow + Red */
+      --primary: #ffd600;          /* Bright yellow */
+      --accent: #dc2626;           /* Vivid red */
+      --dark: #111111;             /* Neutral dark for text */
+      --gray: #fff7cc;             /* Soft light yellow background */
       --white: #ffffff;
-      --navy: #020617;
-      --shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+      --navy: #dc2626;             /* Use red for footer/header base */
+      --shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
       --card-radius: 16px;
       --transition-fast: 0.18s ease-out;
       --transition-med: 0.28s ease-out;
@@ -26,16 +26,22 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      background:
-        radial-gradient(circle at top left, #e5e7eb 0, #f3f4f6 40%, #e5e7eb 100%);
+      /* Light yellow overall feel, taxi photo visible as background */
+      background-color: var(--gray);
+      background-image: url("bg image.png");
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
       color: var(--dark);
       scroll-behavior: smooth;
       -webkit-font-smoothing: antialiased;
-      overflow-x: hidden; /* prevent horizontal scroll on mobiles */
+      overflow-x: hidden;
     }
 
     a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
+    img { max-width: 100%; height: auto; display: block; }
 
     .container {
       max-width: var(--max-width);
@@ -45,12 +51,13 @@
 
     /* HEADER / NAV */
     header {
-      background: rgba(255, 255, 255, 0.96);
+      background: linear-gradient(90deg, #ffd600, #dc2626);
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(14px);
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.35);
     }
 
     .navbar {
@@ -59,33 +66,35 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.85rem 1.3rem;
+      padding: 0.75rem 1.3rem;
       gap: 0.6rem;
+      color: #ffffff;
     }
 
     .logo {
-      font-size: 1.45rem;
+      font-size: 1.35rem;
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--primary);
+      color: #fffbe6;
       display: flex;
       align-items: center;
       gap: 0.55rem;
-      /* removed white-space: nowrap to avoid overflow on mobiles */
+      white-space: nowrap;
     }
 
     .logo-mark {
-      width: 32px;
-      height: 32px;
+      width: 34px;
+      height: 34px;
       border-radius: 12px;
-      background: radial-gradient(circle at 30% 20%, #60a5fa 0, #1d4ed8 40%, #0b1120 100%);
+      background: linear-gradient(135deg, #ffd600, #dc2626);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #f9fafb;
-      font-size: 0.95rem;
-      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+      color: #111111;
+      font-size: 0.78rem;
+      font-weight: 800;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
       flex-shrink: 0;
     }
 
@@ -95,11 +104,13 @@
       font-size: 0.92rem;
       font-weight: 500;
       align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     nav a {
       position: relative;
-      color: #4b5563;
+      color: #fefce8;
       padding-bottom: 0.15rem;
       transition: color var(--transition-fast);
       white-space: nowrap;
@@ -113,12 +124,12 @@
       width: 0;
       height: 2px;
       border-radius: 999px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
+      background: linear-gradient(90deg, #ffe45e, #fee715);
       transition: width var(--transition-med);
     }
 
     nav a:hover {
-      color: var(--primary);
+      color: #ffffff;
     }
 
     nav a:hover::after {
@@ -133,26 +144,26 @@
     }
 
     .quick-book-btn {
-      background: linear-gradient(135deg, var(--primary), #2563eb);
-      color: #f9fafb;
+      background: linear-gradient(135deg, #fff9c4, #ffd600);
+      color: #b91c1c;
       border: none;
-      font-weight: 600;
-      padding: 0.6rem 1.4rem;
+      font-weight: 700;
+      padding: 0.55rem 1.35rem;
       border-radius: 999px;
       cursor: pointer;
       font-size: 0.92rem;
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.5);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.25);
       transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
       white-space: nowrap;
     }
 
     .quick-book-btn:hover {
       transform: translateY(-1px);
-      background: linear-gradient(135deg, #2563eb, #1d4ed8);
-      box-shadow: 0 18px 40px rgba(37, 99, 235, 0.6);
+      background: linear-gradient(135deg, #fffbe6, #ffe45e);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
     }
 
     .menu-toggle,
@@ -160,7 +171,7 @@
       border: none;
       background: transparent;
       font-size: 1.3rem;
-      color: var(--dark);
+      color: #fefce8;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
@@ -171,17 +182,18 @@
       width: 34px;
       height: 34px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.7);
       margin-left: 0.1rem;
       transition: background var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
       flex-shrink: 0;
+      background: rgba(255, 255, 255, 0.1);
     }
 
     .mode-toggle:hover {
-      background: #0f172a;
-      color: #facc15;
-      border-color: #facc15;
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.5);
+      background: #ffffff;
+      color: #b91c1c;
+      border-color: #ffffff;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
       transform: translateY(-1px);
     }
 
@@ -191,27 +203,31 @@
 
     /* HERO */
     .hero {
-      background: radial-gradient(circle at 0 0, rgba(59, 130, 246, 0.14), transparent 55%),
-                  linear-gradient(135deg, var(--navy) 0%, #111827 45%, #1d4ed8 100%);
-      color: #f9fafb;
-      padding: 3.1rem 0 2.6rem;
+      padding: 3rem 0 2.4rem;
+      margin: 1.4rem auto 2.5rem;
+      max-width: calc(var(--max-width) + 2.6rem);
+      border-radius: 26px;
       box-shadow: var(--shadow);
-      border-radius: 0 0 28px 28px;
-      margin-bottom: 2.7rem;
+      /* Light glass card on top of the taxi image */
+      background: radial-gradient(circle at top left, rgba(255, 248, 177, 0.95), rgba(255, 255, 255, 0.92));
+      border: 2px solid rgba(252, 211, 77, 0.9);
     }
 
     .hero-inner {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 0 1.3rem;
+      padding: 0 1.6rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 2.6rem;
+      gap: 2.4rem;
+      color: var(--dark);
+      flex-wrap: wrap;
     }
 
     .hero-content {
       max-width: 640px;
+      flex: 1 1 260px;
     }
 
     .hero-badge-row {
@@ -220,6 +236,7 @@
       gap: 0.7rem;
       margin-bottom: 0.9rem;
       font-size: 0.83rem;
+      flex-wrap: wrap;
     }
 
     .hero-badge {
@@ -228,19 +245,23 @@
       gap: 0.4rem;
       padding: 0.18rem 0.9rem 0.18rem 0.35rem;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(220, 38, 38, 0.45);
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--dark);
+      white-space: nowrap;
     }
 
     .hero-dot {
       width: 1.3rem;
       height: 1.3rem;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, #a5b4fc 0, #60a5fa 40%, #111827 100%);
+      background: radial-gradient(circle at 30% 30%, #ffd600 0, #f97316 45%, #dc2626 100%);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 0.75rem;
+      color: #111111;
+      flex-shrink: 0;
     }
 
     .hero-title {
@@ -249,10 +270,11 @@
       margin-bottom: 0.9rem;
       font-weight: 700;
       letter-spacing: 0.02em;
+      color: #111827;
     }
 
     .hero-title span {
-      background: linear-gradient(120deg, #fbbf24, #f97316, #facc15);
+      background: linear-gradient(120deg, #dc2626, #f97316, #ffd600);
       -webkit-background-clip: text;
       color: transparent;
     }
@@ -260,7 +282,7 @@
     .hero-sub {
       font-size: 1.03rem;
       margin-bottom: 1.1rem;
-      color: #e5e7eb;
+      color: rgba(31, 41, 55, 0.9);
       max-width: 34rem;
     }
 
@@ -277,10 +299,10 @@
       gap: 0.3rem;
       padding: 0.18rem 0.75rem;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.55);
+      border: 1px solid rgba(220, 38, 38, 0.4);
       font-size: 0.8rem;
-      color: #e5e7eb;
-      background: rgba(15, 23, 42, 0.7);
+      color: #1f2937;
+      background: rgba(255, 255, 255, 0.9);
     }
 
     .cta-group {
@@ -291,8 +313,8 @@
     }
 
     .cta-btn {
-      background: #f9fafb;
-      color: var(--primary);
+      background: #ffe45e;
+      color: #b91c1c;
       padding: 0.7rem 1.4rem;
       border: none;
       border-radius: 999px;
@@ -302,32 +324,33 @@
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
-      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.35);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.25);
       transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
     }
 
     .cta-btn:hover {
       transform: translateY(-1px);
-      background: #e5e7eb;
-      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.45);
+      background: #fff7a8;
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
     }
 
     .cta-btn.phone {
       background: transparent;
-      color: #facc15;
-      border: 1px solid rgba(248, 250, 252, 0.4);
+      color: #dc2626;
+      border: 1px solid rgba(220, 38, 38, 0.75);
       box-shadow: none;
     }
 
     .cta-btn.phone:hover {
-      background: rgba(15, 23, 42, 0.7);
-      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.55);
+      background: rgba(255, 255, 255, 0.9);
+      color: #b91c1c;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24);
     }
 
     .hero-note {
       font-size: 0.82rem;
-      color: #e5e7eb;
-      opacity: 0.9;
+      color: #374151;
+      opacity: 0.95;
     }
 
     /* SECTION GENERAL */
@@ -341,54 +364,63 @@
       font-size: 1.85rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
-      color: var(--dark);
+      color: #dc2626;
       text-align: center;
+      text-shadow: 0 2px 6px rgba(255, 243, 205, 0.9);
     }
 
     .section-subtitle {
       font-size: 0.98rem;
-      color: #4b5563;
+      color: rgba(30, 41, 59, 0.9);
       text-align: center;
       max-width: 620px;
       margin: 0 auto 1.2rem;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(252, 211, 77, 0.7);
     }
 
     /* USP CARDS */
     .usp-section {
-      background: var(--white);
-      margin-top: -2.4rem;
+      background: rgba(255, 255, 255, 0.9);
+      margin-top: -2.1rem;
       margin-bottom: 2.3rem;
       border-radius: 18px;
       box-shadow: var(--shadow);
       max-width: var(--max-width);
       margin-left: auto;
       margin-right: auto;
-      padding: 1.7rem 1.5rem;
+      padding: 1.4rem 1.5rem;
       display: flex;
       justify-content: space-between;
       gap: 1rem;
+      border: 1px solid rgba(252, 211, 77, 0.7);
+      flex-wrap: wrap;
     }
 
     .usp-card {
-      background: #f9fafb;
-      border-radius: 12px;
-      padding: 1.1rem 0.8rem;
-      flex: 1;
+      background: #fffdf2;
+      border-radius: 14px;
+      padding: 1rem 0.8rem;
+      flex: 1 1 180px;
       text-align: center;
-      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
-      border: 1px solid rgba(209, 213, 219, 0.8);
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(252, 211, 77, 0.7);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+      color: var(--dark);
     }
 
     .usp-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
-      border-color: rgba(59, 130, 246, 0.45);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+      border-color: rgba(220, 38, 38, 0.8);
+      background: #fffbe6;
     }
 
     .usp-card i {
       font-size: 1.7rem;
-      color: var(--primary);
+      color: #dc2626;
       margin-bottom: 0.45rem;
     }
 
@@ -396,12 +428,12 @@
       font-weight: 700;
       font-size: 1.02rem;
       margin-bottom: 0.16rem;
-      color: var(--dark);
+      color: #b91c1c;
     }
 
     .usp-desc {
       font-size: 0.9rem;
-      color: #6b7280;
+      color: #374151;
     }
 
     /* SERVICES */
@@ -413,26 +445,27 @@
     }
 
     .service-card {
-      background: var(--white);
+      background: rgba(255, 255, 255, 0.96);
       border-radius: var(--card-radius);
       box-shadow: var(--shadow);
       padding: 1.55rem 1.2rem 1.3rem;
       text-align: center;
       cursor: pointer;
       transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med), background var(--transition-med);
-      border: 1px solid rgba(209, 213, 219, 0.9);
+      border: 1px solid rgba(252, 211, 77, 0.8);
+      color: var(--dark);
     }
 
     .service-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.18);
-      border-color: rgba(37, 99, 235, 0.4);
-      background: #f9fafb;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+      border-color: rgba(220, 38, 38, 0.85);
+      background: #fffdf2;
     }
 
     .service-card i {
       font-size: 2rem;
-      color: var(--primary);
+      color: #dc2626;
       margin-bottom: 0.9rem;
     }
 
@@ -440,17 +473,17 @@
       font-size: 1.12rem;
       font-weight: 700;
       margin-bottom: 0.35rem;
-      color: var(--dark);
+      color: #b91c1c;
     }
 
     .service-desc {
       font-size: 0.94rem;
-      color: #4b5563;
+      color: #374151;
       margin-bottom: 0.4rem;
     }
 
     .know-more {
-      color: var(--accent);
+      color: #dc2626;
       font-size: 0.92rem;
       text-decoration: underline;
       cursor: pointer;
@@ -466,7 +499,7 @@
       width: 100vw;
       height: 100vh;
       overflow: auto;
-      background: rgba(15, 23, 42, 0.45);
+      background: rgba(0, 0, 0, 0.55);
       display: none;
       align-items: flex-start;
       justify-content: center;
@@ -474,16 +507,17 @@
     }
 
     .modal-content {
-      background: var(--white);
+      background: rgba(255, 255, 255, 0.97);
       margin: 6vh auto 3vh;
       padding: 2.1rem 1.6rem 1.8rem;
       border-radius: 20px;
-      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.4);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
       max-width: 1050px;
-      min-width: 340px;
+      min-width: 280px;
       width: 100%;
       position: relative;
-      border: 1px solid rgba(209, 213, 219, 0.8);
+      border: 2px solid rgba(252, 211, 77, 0.9);
+      color: var(--dark);
     }
 
     .close {
@@ -491,17 +525,17 @@
       right: 20px;
       top: 16px;
       font-size: 1.9rem;
-      color: #9ca3af;
+      color: #6b7280;
       cursor: pointer;
       font-weight: bold;
       line-height: 1;
     }
 
-    .close:hover { color: var(--accent); }
+    .close:hover { color: #dc2626; }
 
     .modal-title {
       font-size: 1.85rem;
-      color: var(--primary);
+      color: #b91c1c;
       font-weight: 700;
       text-align: center;
       margin-bottom: 0.5rem;
@@ -511,7 +545,7 @@
       font-size: 1rem;
       text-align: center;
       margin-bottom: 1.7rem;
-      color: #4b5563;
+      color: #374151;
     }
 
     .vehicle-grid {
@@ -522,12 +556,13 @@
     }
 
     .vehicle-card {
-      background: #f9fafb;
-      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+      background: #fffdf2;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
       border-radius: 18px;
       padding: 1rem 1rem 0.7rem;
       text-align: center;
-      border: 1px solid rgba(209, 213, 219, 0.9);
+      border: 1px solid rgba(252, 211, 77, 0.8);
+      color: var(--dark);
     }
 
     .vehicle-card img {
@@ -540,23 +575,24 @@
       font-weight: 600;
       font-size: 1.02rem;
       margin-bottom: 0.35rem;
-      color: var(--dark);
+      color: #b91c1c;
     }
 
     .vehicle-badge {
-      background: #e5edff;
-      color: #1d4ed8;
+      background: rgba(252, 211, 77, 0.18);
+      color: #b45309;
       font-size: 0.9rem;
       padding: 0.22rem 0.7rem;
       border-radius: 999px;
       margin: 0.1rem 0 0.8rem 0;
       display: inline-block;
       font-weight: 500;
+      border: 1px solid rgba(252, 211, 77, 0.9);
     }
 
     .vehicle-info {
       font-size: 0.93rem;
-      color: #4b5563;
+      color: #374151;
     }
 
     .vehicle-flex {
@@ -572,7 +608,7 @@
     }
 
     .vehicle-meta strong {
-      color: var(--primary);
+      color: #b91c1c;
       font-weight: 600;
     }
 
@@ -585,8 +621,8 @@
     }
 
     .book-btn {
-      background: var(--primary);
-      color: var(--white);
+      background: #ffd600;
+      color: #1f2937;
       border: none;
       border-radius: 999px;
       font-weight: 600;
@@ -598,18 +634,19 @@
       align-items: center;
       gap: 0.4rem;
       transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
-      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.32);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
     }
 
     .book-btn:hover {
-      background: #1e40af;
+      background: #ffe45e;
       transform: translateY(-1px);
-      box-shadow: 0 14px 32px rgba(37, 99, 235, 0.45);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);
     }
 
     .wa-btn {
       background: #16a34a;
-      box-shadow: 0 10px 24px rgba(22, 163, 74, 0.32);
+      color: #f9fafb;
+      box-shadow: 0 10px 24px rgba(22, 163, 74, 0.45);
     }
 
     .wa-btn:hover { background: #15803d; }
@@ -624,21 +661,25 @@
     }
 
     .fleet-card {
-      background: var(--white);
+      background: rgba(255, 255, 255, 0.96);
       border-radius: var(--card-radius);
       box-shadow: var(--shadow);
       padding: 1.05rem;
       width: 190px;
       text-align: center;
       margin-bottom: 1.3rem;
-      border: 1px solid rgba(209, 213, 219, 0.95);
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+      border: 1px solid rgba(252, 211, 77, 0.8);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+      color: var(--dark);
+      flex: 1 1 160px;
+      max-width: 210px;
     }
 
     .fleet-card:hover {
-      box-shadow: 0 18px 38px rgba(15, 23, 42, 0.18);
-      border-color: rgba(37, 99, 235, 0.4);
+      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.22);
+      border-color: rgba(220, 38, 38, 0.85);
       transform: translateY(-4px);
+      background: #fffdf2;
     }
 
     .fleet-card img {
@@ -648,76 +689,30 @@
 
     .fleet-type {
       font-weight: 700;
-      color: var(--primary);
+      color: #b91c1c;
       margin-bottom: 0.16rem;
     }
 
     .fleet-info {
       font-size: 0.9rem;
-      color: #4b5563;
-    }
-
-    /* TESTIMONIALS */
-    .testimonial-section {
-      background: var(--white);
-      padding: 2.1rem 1.3rem 2rem;
-      border-radius: 18px;
-      margin-bottom: 2.2rem;
-      box-shadow: var(--shadow);
-      margin-top: 1.7rem;
-    }
-
-    .testimonials {
-      display: flex;
-      gap: 1.7rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 0.9rem;
-    }
-
-    .t-card {
-      min-width: 220px;
-      max-width: 340px;
-      border-radius: 14px;
-      background: #f9fafb;
-      padding: 1.05rem 1rem;
-      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12);
-      margin-bottom: 1.2rem;
-      border: 1px solid rgba(209, 213, 219, 0.9);
-    }
-
-    .t-card .stars {
-      color: #f59e0b;
-      margin-bottom: 0.4rem;
-      font-size: 1.04rem;
-    }
-
-    .t-card .t-name {
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 0.15rem;
-      font-size: 0.95rem;
-    }
-
-    .t-card .t-content {
-      font-size: 0.9rem;
-      color: #4b5563;
+      color: #374151;
     }
 
     /* CTA STRIP */
     .cta-strip {
-      background: linear-gradient(135deg, var(--primary), #2563eb);
+      background: linear-gradient(135deg, #dc2626, #b91c1c);
       color: var(--white);
       text-align: center;
       padding: 1.45rem 0.7rem 1.5rem;
       font-size: 1.05rem;
       margin: 2.1rem 0 0;
       box-shadow: var(--shadow);
+      border-top: 1px solid rgba(255, 255, 255, 0.25);
     }
 
     .cta-strip .cta-btn {
-      background: var(--accent);
-      color: var(--white);
+      background: #ffd600;
+      color: #1f2937;
       margin: 1rem 0.3rem 0;
       padding: 0.72rem 1.6rem;
       font-size: 0.98rem;
@@ -725,35 +720,36 @@
       font-weight: 700;
       border: none;
       cursor: pointer;
-      box-shadow: 0 12px 30px rgba(245, 158, 11, 0.55);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
     }
 
     .cta-strip .cta-btn:hover {
-      background: #d97706;
-      box-shadow: 0 16px 36px rgba(245, 158, 11, 0.65);
+      background: #ffe45e;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.32);
     }
 
     /* QUICK BOOK FORM */
     .quick-book-form {
-      background: var(--white);
+      background: rgba(255, 255, 255, 0.96);
       border-radius: 18px;
       box-shadow: var(--shadow);
       padding: 2rem 1.7rem 1.7rem;
       max-width: 560px;
       margin: 2.5rem auto 0;
-      border: 1px solid rgba(209, 213, 219, 0.95);
+      border: 1px solid rgba(252, 211, 77, 0.9);
+      color: var(--dark);
     }
 
     .quick-book-form h2 {
       text-align: center;
-      color: var(--dark);
+      color: #b91c1c;
       margin-bottom: 0.35rem;
       font-size: 1.5rem;
     }
 
     .quick-book-form p {
       font-size: 0.9rem;
-      color: #4b5563;
+      color: #374151;
       text-align: center;
       margin-bottom: 1rem;
     }
@@ -762,7 +758,7 @@
 
     label {
       font-weight: 500;
-      color: var(--primary);
+      color: #b91c1c;
       display: block;
       margin-bottom: 0.28rem;
       font-size: 0.9rem;
@@ -777,14 +773,15 @@
       border-radius: 10px;
       font-size: 0.96rem;
       background: #f9fafb;
+      color: var(--dark);
       transition: border var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
     }
 
     input:focus,
     select:focus,
     textarea:focus {
-      border: 1.6px solid var(--primary);
-      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.25);
+      border: 1.6px solid #facc15;
+      box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.4);
       background: #ffffff;
       outline: none;
     }
@@ -795,8 +792,8 @@
     }
 
     .form-submit {
-      background: linear-gradient(135deg, var(--primary), #2563eb);
-      color: var(--white);
+      background: linear-gradient(135deg, #ffd600, #f97316);
+      color: #111827;
       padding: 0.9rem 2.3rem;
       border: none;
       border-radius: 999px;
@@ -808,14 +805,14 @@
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
-      box-shadow: 0 14px 34px rgba(37, 99, 235, 0.55);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
       transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
     }
 
     .form-submit:hover {
-      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      background: linear-gradient(135deg, #ffe45e, #fb923c);
       transform: translateY(-1px);
-      box-shadow: 0 18px 40px rgba(37, 99, 235, 0.65);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
     }
 
     .form-info {
@@ -827,15 +824,15 @@
 
     /* CONTACT / POLICY BLOCKS */
     .policy-block {
-      background: #f9fafb;
+      background: rgba(255, 255, 255, 0.96);
       border-radius: 14px;
       padding: 1.2rem 1.1rem;
       font-size: 0.98rem;
       max-width: 820px;
       margin: 1rem auto 0;
-      color: #1f2933;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
-      border: 1px solid rgba(209, 213, 219, 0.9);
+      color: #374151;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+      border: 1px solid rgba(252, 211, 77, 0.9);
     }
 
     /* FOOTER */
@@ -845,7 +842,8 @@
       padding: 2.1rem 0 1rem;
       font-size: 0.95rem;
       margin-top: 2.4rem;
-      border-top: 1px solid rgba(148, 163, 184, 0.3);
+      border-top: 1px solid rgba(255, 255, 255, 0.35);
+      box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.35);
     }
 
     .footer-content {
@@ -863,7 +861,7 @@
     .footer-logo {
       font-size: 1.1rem;
       font-weight: 700;
-      color: var(--accent);
+      color: #ffe45e;
       margin-bottom: 0.2rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -872,7 +870,7 @@
     .footer-block div { margin-bottom: 0.3rem; }
 
     .footer-links a {
-      color: #e5e7eb;
+      color: #fee2e2;
       text-decoration: none;
       display: block;
       margin-bottom: 0.35rem;
@@ -882,7 +880,7 @@
     }
 
     .footer-links a:hover {
-      color: #bfdbfe;
+      color: #ffffff;
       opacity: 1;
       transform: translateX(2px);
     }
@@ -895,21 +893,21 @@
     }
 
     .socials a {
-      color: #bfdbfe;
+      color: #fee2e2;
       transition: color var(--transition-fast), transform var(--transition-fast);
     }
 
     .socials a:hover {
-      color: var(--accent);
+      color: #ffe45e;
       transform: translateY(-1px);
     }
 
     .footer-bottom {
       text-align: center;
-      border-top: 1px solid #1f2937;
+      border-top: 1px solid #b91c1c;
       margin-top: 1.2rem;
       padding-top: 0.6rem;
-      color: #9ca3af;
+      color: #fed7d7;
       font-size: 0.86rem;
     }
 
@@ -934,101 +932,152 @@
     .floating-whatsapp {
       bottom: 22px;
       background: #16a34a;
-      box-shadow: 0 16px 40px rgba(22, 163, 74, 0.6);
+      box-shadow: 0 16px 40px rgba(22, 163, 74, 0.8);
     }
 
     .floating-whatsapp:hover {
       background: #15803d;
       transform: translateY(-2px);
-      box-shadow: 0 20px 48px rgba(22, 163, 74, 0.7);
+      box-shadow: 0 20px 48px rgba(22, 163, 74, 0.9);
     }
 
     .floating-instagram {
       bottom: 90px;
       background: radial-gradient(circle at 30% 20%, #fdf497 0, #fd5949 40%, #d6249f 70%, #285AEB 100%);
-      box-shadow: 0 16px 40px rgba(220, 38, 38, 0.6);
+      box-shadow: 0 16px 40px rgba(220, 38, 38, 0.8);
       font-size: 1.8rem;
     }
 
     .floating-instagram:hover {
       transform: translateY(-2px);
-      box-shadow: 0 20px 48px rgba(220, 38, 38, 0.8);
+      box-shadow: 0 20px 48px rgba(220, 38, 38, 0.9);
     }
 
-    /* DARK MODE OVERRIDES */
+    /* NEW DARK MODE – clean charcoal with yellow/red accents */
     body.dark-mode {
-      background: #020617;
-      color: #e5e7eb;
+      background-color: #050505;
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.94)),
+        url("bg image.png");
+      color: #e5e5e5;
     }
 
     body.dark-mode header {
-      background: rgba(15, 23, 42, 0.96);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+      background: linear-gradient(90deg, #151515, #b91c1c);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+      border-bottom-color: rgba(0, 0, 0, 0.8);
     }
 
     body.dark-mode nav a {
-      color: #e5e7eb;
+      color: #f9fafb;
     }
 
-    body.dark-mode .hero {
-      background: linear-gradient(135deg, #020617, #020617);
-      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.9);
+    body.dark-mode nav a::after {
+      background: linear-gradient(90deg, #facc15, #fb923c);
     }
 
-    body.dark-mode .section-title {
-      color: #e5e7eb;
+    body.dark-mode nav.nav-open {
+      background: rgba(17, 17, 17, 0.97);
     }
 
-    body.dark-mode .section-subtitle,
-    body.dark-mode .usp-desc,
-    body.dark-mode .service-desc,
-    body.dark-mode .t-content,
-    body.dark-mode .fleet-info,
-    body.dark-mode label {
-      color: #cbd5f5;
+    body.dark-mode .mode-toggle {
+      border-color: rgba(250, 204, 21, 0.7);
+      background: rgba(15, 15, 15, 0.95);
+      color: #facc15;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
     }
 
+    body.dark-mode .mode-toggle:hover {
+      background: #facc15;
+      color: #111111;
+    }
+
+    body.dark-mode .quick-book-btn,
+    body.dark-mode .cta-btn {
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.75);
+    }
+
+    body.dark-mode .hero,
     body.dark-mode .usp-section,
     body.dark-mode .service-card,
     body.dark-mode .fleet-card,
-    body.dark-mode .testimonial-section,
-    body.dark-mode .t-card,
     body.dark-mode .quick-book-form,
     body.dark-mode .policy-block,
-    body.dark-mode .modal-content {
-      background: #020617;
-      border-color: #1f2937;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85);
-    }
-
-    body.dark-mode .usp-card,
+    body.dark-mode .modal-content,
     body.dark-mode .vehicle-card {
-      background: #020617;
-      border-color: #1f2937;
+      background: #151515;
+      color: #e5e5e5;
+      border-color: rgba(250, 204, 21, 0.5);
+      box-shadow: 0 22px 46px rgba(0, 0, 0, 0.85);
     }
 
-    body.dark-mode .vehicle-info,
-    body.dark-mode .vehicle-meta {
+    body.dark-mode .hero-title {
+      color: #f9fafb;
+    }
+
+    body.dark-mode .hero-sub,
+    body.dark-mode .hero-note,
+    body.dark-mode .service-desc,
+    body.dark-mode .usp-desc,
+    body.dark-mode .fleet-info,
+    body.dark-mode .quick-book-form p,
+    body.dark-mode .policy-block,
+    body.dark-mode .vehicle-info {
+      color: #d1d5db;
+    }
+
+    body.dark-mode .hero-badge,
+    body.dark-mode .hero-pill {
+      background: rgba(24, 24, 27, 0.95);
+      color: #f9fafb;
+      border-color: rgba(250, 204, 21, 0.4);
+    }
+
+    body.dark-mode .section-title {
+      color: #facc15;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+    }
+
+    body.dark-mode .section-subtitle {
+      background: rgba(24, 24, 27, 0.9);
+      border-color: rgba(250, 204, 21, 0.4);
+      color: #e5e5e5;
+    }
+
+    body.dark-mode .cta-strip {
+      background: linear-gradient(135deg, #7f1d1d, #b91c1c);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.85);
+    }
+
+    body.dark-mode footer {
+      background: #050505;
+      border-top-color: #111111;
+      box-shadow: 0 -12px 28px rgba(0, 0, 0, 0.95);
+    }
+
+    body.dark-mode .footer-links a {
       color: #e5e7eb;
+    }
+
+    body.dark-mode .footer-bottom {
+      border-top-color: #111111;
+      color: #9ca3af;
     }
 
     body.dark-mode input,
     body.dark-mode select,
     body.dark-mode textarea {
       background: #020617;
-      color: #e5e7eb;
-      border-color: #374151;
+      color: #f9fafb;
+      border-color: #4b5563;
     }
 
     body.dark-mode input:focus,
     body.dark-mode select:focus,
     body.dark-mode textarea:focus {
       background: #020617;
-      box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.6);
-    }
-
-    body.dark-mode .footer-links a {
-      color: #e5e7eb;
+      border-color: #facc15;
+      box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.5);
     }
 
     /* RESPONSIVE */
@@ -1045,6 +1094,10 @@
         flex-direction: column;
         text-align: center;
         align-items: center;
+      }
+
+      .hero-content {
+        max-width: 100%;
       }
 
       .hero-meta {
@@ -1068,17 +1121,21 @@
       nav {
         position: absolute;
         inset: 58px 1rem auto 1rem;
-        background: #ffffff;
+        background: linear-gradient(180deg, rgba(255, 230, 138, 0.97), rgba(248, 250, 252, 0.97));
         flex-direction: column;
         gap: 0.9rem;
         padding: 0.8rem 1rem 1rem;
         border-radius: 16px;
-        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.32);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
         transform-origin: top;
         transform: scaleY(0.6);
         opacity: 0;
         pointer-events: none;
         transition: opacity var(--transition-med), transform var(--transition-med);
+      }
+
+      nav a {
+        color: #111827;
       }
 
       nav.nav-open {
@@ -1096,17 +1153,21 @@
       }
 
       .hero {
-        padding-top: 2.6rem;
+        padding-top: 2.4rem;
+        margin: 1rem 0.8rem 2.2rem;
       }
 
       .header-right {
         gap: 0.3rem;
       }
 
-      /* make logo slightly smaller on small screens */
       .logo {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
         letter-spacing: 0.08em;
+      }
+
+      body.dark-mode nav.nav-open {
+        background: rgba(17, 17, 17, 0.97);
       }
     }
 
@@ -1127,11 +1188,6 @@
         align-items: center;
       }
 
-      .testimonials {
-        flex-direction: column;
-        align-items: center;
-      }
-
       footer .footer-content {
         flex-direction: column;
         gap: 1.1rem;
@@ -1139,7 +1195,30 @@
 
       .service-grid { grid-template-columns: 1fr; }
 
-      .hero-inner { padding: 0 1rem; }
+      .hero-inner { padding: 0 1.2rem; }
+    }
+
+    @media (max-width: 400px) {
+      .hero {
+        border-radius: 18px;
+        padding: 2.3rem 0 2rem;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .floating-whatsapp,
+      .floating-instagram {
+        width: 50px;
+        height: 50px;
+        font-size: 1.6rem;
+        right: 12px;
+      }
+
+      .floating-instagram {
+        bottom: 80px;
+      }
     }
   </style>
 </head>
@@ -1148,8 +1227,8 @@
   <header>
     <div class="navbar">
       <span class="logo">
-        <span class="logo-mark">N</span>
-        Nethravati Travels
+        <span class="logo-mark">NM</span>
+        NM Travels
       </span>
 
       <nav id="mainNav">
@@ -1157,7 +1236,6 @@
         <a href="#services">Services</a>
         <a href="#fleet">Fleet</a>
         <a href="#about">About</a>
-        <a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a>
         <a href="#privacy">Privacy</a>
         <a href="#terms">Terms</a>
@@ -1184,13 +1262,13 @@
         <div class="hero-badge-row">
           <div class="hero-badge">
             <div class="hero-dot"><i class="fa-solid fa-route"></i></div>
-            <span>Safe & hassle-free cab services</span>
+            <span>Comfortable &amp; reliable cab services</span>
           </div>
           <span style="font-size:0.8rem;opacity:0.9;">Local • Airport • Outstation • 24/7</span>
         </div>
 
         <div class="hero-title">
-          Safe & Hassle-Free <span>Cab Services</span>
+          Safe &amp; Hassle-Free <span>Cab Services</span>
         </div>
         <div class="hero-sub">
           Your trusted partner for local, airport and outstation rides – 24/7. Starting at ₹12/km.
@@ -1201,7 +1279,7 @@
             <i class="fa-solid fa-indian-rupee-sign"></i> Transparent fares
           </div>
           <div class="hero-pill">
-            <i class="fa-solid fa-car-side"></i> Clean & sanitized vehicles
+            <i class="fa-solid fa-car-side"></i> Clean &amp; comfortable vehicles
           </div>
           <div class="hero-pill">
             <i class="fa-solid fa-user-tie"></i> Experienced drivers
@@ -1212,11 +1290,11 @@
           <button class="cta-btn" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'});">
             <i class="fa-solid fa-car"></i> Quick Book
           </button>
-          <a href="tel:+919876543210" class="cta-btn phone">
+          <a href="tel:+919916807431" class="cta-btn phone">
             <i class="fa-solid fa-phone"></i> Call Now
           </a>
           <a
-            href="https://wa.me/918431490207?text=Hi%20Nethravati%20Travels%2C%0A%0AI%20would%20like%20to%20book%20a%20cab.%0A%0ATrip%20type%3A%20%5BLocal%2FAirport%2FOutstation%5D%0APickup%3A%20%5BYour%20pickup%20location%5D%0ADrop%3A%20%5BYour%20drop%20location%5D%0APickup%20date%20%26%20time%3A%20%5BDD-MM-YYYY%2C%20HH%3AMM%5D%0A%0APlease%20confirm%20availability%20and%20total%20fare."
+            href="https://wa.me/919916807431?text=Hi%20NM%20Travels%2C%0A%0AI%20would%20like%20to%20book%20a%20cab.%0A%0ATrip%20type%3A%20%5BLocal%2FAirport%2FOutstation%5D%0APickup%3A%20%5BYour%20pickup%20location%5D%0ADrop%3A%20%5BYour%20drop%20location%5D%0APickup%20date%20%26%20time%3A%20%5BDD-MM-YYYY%2C%20HH%3AMM%5D%0A%0APlease%20confirm%20availability%20and%20total%20fare."
             class="cta-btn phone" target="_blank">
             <i class="fa-brands fa-whatsapp"></i> WhatsApp
           </a>
@@ -1240,12 +1318,7 @@
     <div class="usp-card">
       <i class="fa-solid fa-person"></i>
       <div class="usp-title">Professional Drivers</div>
-      <div class="usp-desc">Experienced & courteous staff.</div>
-    </div>
-    <div class="usp-card">
-      <i class="fa-solid fa-shield"></i>
-      <div class="usp-title">Safe & Secure</div>
-      <div class="usp-desc">Sanitized cars, GPS tracking.</div>
+      <div class="usp-desc">Experienced &amp; courteous staff.</div>
     </div>
     <div class="usp-card">
       <i class="fa-solid fa-rupee-sign"></i>
@@ -1263,13 +1336,13 @@
   <section id="services" class="section">
     <div class="section-title">Our Services</div>
     <p class="section-subtitle">
-      Choose from airport, local, outstation and fleet services – all with clear pricing and easy booking.
+      Choose from airport, local and outstation services – all with clear pricing and easy booking.
     </p>
     <div class="service-grid">
       <div class="service-card" onclick="showService('airport')">
         <i class="fa-solid fa-plane-departure"></i>
         <div class="service-title">Airport Taxi</div>
-        <div class="service-desc">Best airport cabs with safe, fixed rates.</div>
+        <div class="service-desc">Convenient airport cabs with safe, fixed rates.</div>
         <span class="know-more">View Options</span>
       </div>
       <div class="service-card" onclick="showService('local')">
@@ -1283,12 +1356,6 @@
         <div class="service-title">Outstation Taxi</div>
         <div class="service-desc">Comfort for pilgrimage, one-way or round trip.</div>
         <span class="know-more">View Options</span>
-      </div>
-      <div class="service-card" onclick="showService('fleet')">
-        <i class="fa-solid fa-car-side"></i>
-        <div class="service-title">Fleet</div>
-        <div class="service-desc">Family vans, SUVs, tempo traveller, bus.</div>
-        <span class="know-more">View Fleet</span>
       </div>
     </div>
   </section>
@@ -1314,13 +1381,11 @@
         : '<i class="fa-regular fa-moon"></i>';
     }
 
-    // Initial theme from storage/system
+    // Initial theme ONLY from localStorage (no auto dark from system)
     (function initTheme() {
       const storedTheme = localStorage.getItem('nt-theme');
-      const prefersDark = window.matchMedia &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-      if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
+      if (storedTheme === 'dark') {
         document.body.classList.add('dark-mode');
         setModeIcon('dark');
       } else {
@@ -1359,7 +1424,7 @@
       let data = {
         airport: {
           title: "Airport Taxi",
-          caption: "Book a safe, professional taxi for airport trips. 24/7 support.",
+          caption: "Book a comfortable, professional taxi for airport trips. 24/7 support.",
           vehicles: [
             {img:"https://img.icons8.com/color/96/car--v1.png",title:"Hatchback AC",badge:"Airport Taxi",tariff:"₹1500/km",toll:"₹120",seat:"4+1"},
             {img:"https://img.icons8.com/color/96/sedan.png",title:"Swift Dzire AC",badge:"Airport Taxi",tariff:"₹1800/km",toll:"₹120",seat:"4+1"},
@@ -1367,31 +1432,20 @@
             {img:"https://img.icons8.com/color/96/suv.png",title:"ERTIGA SUV",badge:"Airport Taxi",tariff:"₹2500/km",toll:"₹120",seat:"6+1"},
           ]
         },
-        fleet: {
-          title:"Fleet",
-          caption:"All fleet available for outstation/group trips.",
-          vehicles:[
-            {img:"https://img.icons8.com/color/96/mini-bus.png",title:"Tempo Traveller AC",badge:"Fleet AC",tariff:"₹24/km",toll:"-",seat:"12+1"},
-            {img:"https://img.icons8.com/color/96/mini-bus.png",title:"Tempo Traveller Non AC",badge:"Fleet Non AC",tariff:"₹20/km",toll:"-",seat:"12+1"},
-            {img:"https://img.icons8.com/color/96/suv.png",title:"Innova Crysta Hycross AC",badge:"Fleet AC",tariff:"₹22/km",toll:"-",seat:"7+1"},
-            {img:"https://img.icons8.com/color/96/car.png",title:"Toyota Innova Crysta AC",badge:"Fleet AC",tariff:"₹20/km",toll:"-",seat:"7+1"},
-          ]
-        },
         local:{
           title:"Local Taxi",
-          caption:"Clean, safe cars for local trips, all day.",
+          caption:"Clean, comfortable cars for local trips, all day.",
           vehicles:[
             {img:"https://img.icons8.com/color/96/sedan.png",title:"Swift Dzire AC",badge:"Local Taxi",tariff:"₹2200",include:"8HRS 80KLM",extraKm:"₹14",extraHr:"₹150",seat:"4+1"},
             {img:"https://img.icons8.com/color/96/car--v1.png",title:"Hatchback AC",badge:"Local Taxi",tariff:"₹2100",include:"8HRS 80KLM",extraKm:"₹14",extraHr:"₹150",seat:"4+1"},
             {img:"https://img.icons8.com/color/96/car.png",title:"Toyota Etios AC",badge:"Local Taxi",tariff:"₹2300",include:"8HRS 80KLM",extraKm:"₹14",extraHr:"₹150",seat:"4+1"},
-            {img:"https://img.icons8.com/color/96/mini-bus.png",title:"Tempo Traveller AC",badge:"Local Taxi",tariff:"₹4200",include:"8HRS 80KLM",extraKm:"₹20",extraHr:"₹300",seat:"12+1"},
           ]
         },
         outstation:{
           title:"Outstation Taxi",
-          caption:"Travel to towns and cities. Comfort and trust.",
+          caption:"Travel to towns and cities with comfort and trust.",
           vehicles:[
-            {img:"https://img.icons8.com/color/96/car.png",title:"Seaden AC",badge:"Outstation Taxi",tariff:"₹13/km",perDayKm:"300 km",bata:"₹400/day",seat:"4+1"},
+            {img:"https://img.icons8.com/color/96/car.png",title:"Sedan AC",badge:"Outstation Taxi",tariff:"₹13/km",perDayKm:"300 km",bata:"₹400/day",seat:"4+1"},
             {img:"https://img.icons8.com/color/96/suv.png",title:"ERTIGA AC",badge:"Outstation Taxi",tariff:"₹14/km",perDayKm:"300 km",bata:"₹500/day",seat:"6+1"},
             {img:"https://img.icons8.com/color/96/car.png",title:"Toyota Innova AC",badge:"Outstation Taxi",tariff:"₹17/km",perDayKm:"300 km",bata:"₹500/day",seat:"7+1"},
             {img:"https://img.icons8.com/color/96/suv.png",title:"Toyota Innova Crysta AC",badge:"Outstation Taxi",tariff:"₹20/km",perDayKm:"300 km",bata:"₹500/day",seat:"7+1"},
@@ -1407,7 +1461,7 @@
       s.vehicles.forEach(v => {
         // Friendly WhatsApp message with car details
         let msgLines = [
-          "Hi Nethravati Travels,",
+          "Hi NM Travels,",
           "",
           `I would like to book a ${s.title}.`,
           `Vehicle: ${v.title} (${v.badge})`
@@ -1434,7 +1488,7 @@
 
         let msg = msgLines.join("\n");
         let encodedMsg = encodeURIComponent(msg);
-        let waUrl = `https://wa.me/918431490207?text=${encodedMsg}`;
+        let waUrl = `https://wa.me/919916807431?text=${encodedMsg}`;
 
         html += `<div class="vehicle-card">
           <img src="${v.img}" alt="${v.title}" loading="lazy"/>
@@ -1476,11 +1530,13 @@
 
     // Booking form JS
     function bookFormHander() {
-      document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      const form = document.getElementById('bookingForm');
+      if (!form) return;
+      form.addEventListener('submit', function(e) {
         e.preventDefault();
         document.getElementById('formInfo').textContent =
           "Thank you! Your booking has been received, our team will contact you shortly.";
-        document.getElementById('bookingForm').reset();
+        form.reset();
         setTimeout(function(){
           document.getElementById('formInfo').textContent = "";
         }, 6500);
@@ -1493,7 +1549,7 @@
   <section id="fleet" class="section fleet-section">
     <div class="section-title">Our Fleet</div>
     <p class="section-subtitle">
-      From solo rides to big family tours – choose the right vehicle for your journey.
+      From solo rides to family trips – choose the right vehicle for your journey.
     </p>
     <div class="fleet-cards">
       <div class="fleet-card">
@@ -1509,17 +1565,7 @@
       <div class="fleet-card">
         <img src="https://img.icons8.com/color/64/suv.png" alt="SUV">
         <div class="fleet-type">SUV</div>
-        <div class="fleet-info">6 seats, luxury travel, long rides, extra luggage, AC.</div>
-      </div>
-      <div class="fleet-card">
-        <img src="https://img.icons8.com/color/64/mini-bus.png" alt="Tempo Traveller">
-        <div class="fleet-type">Tempo Traveller</div>
-        <div class="fleet-info">Up to 17 seats, perfect for family/group tours, AC.</div>
-      </div>
-      <div class="fleet-card">
-        <img src="https://img.icons8.com/color/64/bus.png" alt="Bus">
-        <div class="fleet-type">Bus</div>
-        <div class="fleet-info">25+ seats, ideal for events, tour groups, schools.</div>
+        <div class="fleet-info">6 seats, long rides, extra luggage, AC.</div>
       </div>
     </div>
   </section>
@@ -1527,51 +1573,21 @@
   <!-- ABOUT -->
   <section id="about" class="section">
     <div class="section-title">About Us</div>
-    <p style="text-align:center; font-size:1.02rem; max-width:680px; margin:0.6rem auto 0;">
-      Nethravati Travels started in 2012 to offer safe, reliable cabs and travel packages throughout Bangalore and South India.
-      Our experienced drivers, well-maintained fleet, and friendly staff have made us Bangalore's favorite family ride choice.<br><br>
-      <strong>Our Values:</strong> Safety first, comfort always, punctuality, customer satisfaction.<br/>
+    <p style="text-align:center; font-size:1.02rem; max-width:680px; margin:0.6rem auto 0; color:#111827; background:rgba(255,255,255,0.95); padding:0.7rem 1rem; border-radius:18px; box-shadow:0 10px 25px rgba(0,0,0,0.18);">
+      NM Travels started in 2012 to offer comfortable, reliable cabs and travel packages throughout Bangalore and South India.
+      Our experienced drivers, well-maintained fleet, and friendly staff have made us a trusted family ride choice.<br><br>
+      <strong>Our Values:</strong> Comfort, punctuality, transparent fares, customer satisfaction.<br/>
       <strong>Our Team:</strong> Polite, background-checked chauffeurs and support staff.<br/>
     </p>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section id="testimonials" class="section testimonial-section">
-    <div class="section-title">Customer Testimonials</div>
-    <p class="section-subtitle">
-      What our regular travellers say about their experience with Nethravati Travels.
-    </p>
-    <div class="testimonials">
-      <div class="t-card">
-        <div class="stars">★★★★★</div>
-        <div class="t-name">Rajesh P.</div>
-        <div class="t-content">Best outstation cab experience ever – prompt &amp; clean!</div>
-      </div>
-      <div class="t-card">
-        <div class="stars">★★★★★</div>
-        <div class="t-name">Neha S.</div>
-        <div class="t-content">Airport drop was on time; the driver was very courteous.</div>
-      </div>
-      <div class="t-card">
-        <div class="stars">★★★★★</div>
-        <div class="t-name">Vivek M.</div>
-        <div class="t-content">Affordable fares and easy booking. Recommended for local rides!</div>
-      </div>
-      <div class="t-card">
-        <div class="stars">★★★★☆</div>
-        <div class="t-name">Geetha K.</div>
-        <div class="t-content">Family tour package was well planned. Comfortable tempo traveller!</div>
-      </div>
-    </div>
-  </section>
-
   <!-- CTA STRIP -->
   <div class="cta-strip">
-    Ready to book your ride with Nethravati Travels? <br>
+    Ready to book your ride with NM Travels? <br>
     <button class="cta-btn" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'});">
       Quick Book
     </button>
-    <a href="tel:+919876543210" class="cta-btn">
+    <a href="tel:+919916807431" class="cta-btn">
       Call Now
     </a>
   </div>
@@ -1600,7 +1616,6 @@
           <option>Local</option>
           <option>Airport</option>
           <option>Outstation</option>
-          <option>Fleet</option>
         </select>
       </div>
       <div class="form-group">
@@ -1622,8 +1637,6 @@
           <option>Hatchback</option>
           <option>Sedan</option>
           <option>SUV</option>
-          <option>Tempo Traveller</option>
-          <option>Bus</option>
         </select>
       </div>
       <div class="form-group">
@@ -1640,18 +1653,18 @@
   <!-- CONTACT -->
   <section id="contact" class="section">
     <div class="section-title">Contact Us</div>
-    <div style="text-align:center; font-size:1.02rem; max-width:460px; margin:0.7rem auto 0;">
+    <div style="text-align:center; font-size:1.02rem; max-width:460px; margin:0.7rem auto 0; color:#111827; background:rgba(255,255,255,0.96); padding:0.9rem 1.2rem; border-radius:18px; box-shadow:0 10px 25px rgba(0,0,0,0.18);">
       <i class="fa-solid fa-phone"></i>
-      <a href="tel:+919876543210" style="color:var(--primary); text-decoration:none;">+91 98765 43210</a><br>
+      <a href="tel:+919916807431" style="color:#b91c1c; text-decoration:none;">+91 99168 07431</a><br>
       <i class="fa-brands fa-whatsapp"></i>
       <a
-        href="https://wa.me/918431490207?text=Hi%20Nethravati%20Travels%2C%0A%0AI%20would%20like%20to%20book%20a%20cab.%0A%0APlease%20connect%20with%20me%20to%20confirm%20the%20details."
-        style="color:var(--accent); text-decoration:none;" target="_blank">
+        href="https://wa.me/919916807431?text=Hi%20NM%20Travels%2C%0A%0AI%20would%20like%20to%20book%20a%20cab.%0A%0APlease%20connect%20with%20me%20to%20confirm%20the%20details."
+        style="color:#16a34a; text-decoration:none;" target="_blank">
         WhatsApp
       </a><br>
       <i class="fa-solid fa-envelope"></i>
-      <a href="mailto:info@nethravati-travels.com" style="color:var(--primary); text-decoration:none;">
-        info@nethravati-travels.com
+      <a href="mailto:mailnmtravels@gmail.com" style="color:#b91c1c; text-decoration:none;">
+        mailnmtravels@gmail.com
       </a><br>
       <i class="fa-solid fa-location-dot"></i> No.15, MG Road, Bangalore, Karnataka<br>
       <b>Working Hours:</b> 24/7 Service<br>
@@ -1666,7 +1679,7 @@
       We collect only necessary info to process bookings and respond to queries. No data is shared except as required for service or legal reasons.<br><br>
       <strong>Data Protection:</strong> Details submitted are secured and not stored online after booking is confirmed.<br><br>
       <strong>Cookies:</strong> Only used for basic site functionality; no personal information stored.<br><br>
-      <strong>Contact:</strong> info@nethravati-travels.com
+      <strong>Contact:</strong> mailnmtravels@gmail.com
     </div>
   </section>
 
@@ -1676,7 +1689,7 @@
     <div class="policy-block">
       <strong>Booking Policy:</strong> Advance booking may be required. Bookings subject to vehicle availability.<br>
       <strong>Cancellation &amp; Refund:</strong> Full refund for cancellations at least 2 hours before scheduled pickup. Otherwise, 50% refund.<br>
-      <strong>Customer Responsibility:</strong> Please keep belongings safe. Nethravati Travels not liable for delays due to traffic or external events.<br>
+      <strong>Customer Responsibility:</strong> Please keep belongings safe. NM Travels is not liable for delays due to traffic or external events.<br>
       <strong>Payment:</strong> Accepted via cash, UPI, card. Tolls, parking, night charges extra.<br>
       <strong>Jurisdiction:</strong> Disputes subject to Bangalore courts only.<br>
     </div>
@@ -1686,7 +1699,7 @@
   <footer>
     <div class="footer-content">
       <div class="footer-block">
-        <span class="footer-logo">Nethravati Travels</span>
+        <span class="footer-logo">NM Travels</span>
         <div>Bangalore's trusted cab partner since 2012</div>
       </div>
       <div class="footer-block footer-links">
@@ -1700,11 +1713,11 @@
       </div>
       <div class="footer-block">
         <div><b>Contact</b></div>
-        <div>+91 98765 43210<br>info@nethravati-travels.com</div>
+        <div>+91 99168 07431<br>mailnmtravels@gmail.com</div>
         <div>No. 15, MG Road, Bangalore</div>
         <div class="socials">
           <a
-            href="https://wa.me/918431490207?text=Hi%20Nethravati%20Travels%2C%0A%0AI%20would%20like%20to%20book%20a%20cab.%0A%0APlease%20connect%20with%20me%20to%20confirm%20the%20details."
+            href="https://wa.me/919916807431?text=Hi%20NM%20Travels%2C%0A%0AI%20would%20like%20to%20book%20a%20cab.%0A%0APlease%20connect%20with%20me%20to%20confirm%20the%20details."
             target="_blank">
             <i class="fa-brands fa-whatsapp"></i>
           </a>
@@ -1716,13 +1729,13 @@
       </div>
     </div>
     <div class="footer-bottom">
-      © 2025 Nethravati Travels. All Rights Reserved.
+      © 2025 NM Travels. All Rights Reserved.
     </div>
   </footer>
 
   <!-- Floating WhatsApp -->
   <a
-    href="https://wa.me/918431490207?text=Hi%20Nethravati%20Travels%2C%0A%0AI%20would%20like%20to%20book%20a%20cab.%0A%0APlease%20connect%20with%20me%20to%20confirm%20the%20details."
+    href="https://wa.me/919916807431?text=Hi%20NM%20Travels%2C%0A%0AI%20would%20like%20to%20book%20a%20cab.%0A%0APlease%20connect%20with%20me%20to%20confirm%20the%20details."
     class="floating-whatsapp"
     title="Chat via WhatsApp"
     target="_blank">
