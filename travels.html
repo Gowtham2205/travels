@@ -8,8 +8,7 @@
 
   <style>
     :root {
-      /* Karnataka flag inspired palette: Bright Yellow + Red */
-      --primary: #ffd600;          /* Bright yellow */
+          --primary: #ffd600;          /* Bright yellow */
       --accent: #dc2626;           /* Vivid red */
       --dark: #111111;             /* Neutral dark for text */
       --gray: #fff7cc;             /* Soft light yellow background */
@@ -26,9 +25,12 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      /* Light yellow overall feel, taxi photo visible as background */
+
+      /* Background image + soft light overlay so photo is visible */
       background-color: var(--gray);
-      background-image: url("bg image.png");
+      background-image:
+        linear-gradient(rgba(255, 247, 204, 0.55), rgba(255, 247, 204, 0.55)),
+        url("bg image.png");
       background-attachment: fixed;
       background-size: cover;
       background-position: center;
@@ -83,19 +85,16 @@
       white-space: nowrap;
     }
 
-    .logo-mark {
-      width: 34px;
-      height: 34px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #ffd600, #dc2626);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #111111;
-      font-size: 0.78rem;
-      font-weight: 800;
+    /* LOGO IMAGE (replace src in HTML) */
+    .logo-img {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      object-fit: cover;
+      background: rgba(255,255,255,0.9);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
       flex-shrink: 0;
+      border: 2px solid rgba(255, 255, 255, 0.75);
     }
 
     nav {
@@ -128,13 +127,8 @@
       transition: width var(--transition-med);
     }
 
-    nav a:hover {
-      color: #ffffff;
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
+    nav a:hover { color: #ffffff; }
+    nav a:hover::after { width: 100%; }
 
     .header-right {
       display: flex;
@@ -197,9 +191,7 @@
       transform: translateY(-1px);
     }
 
-    .menu-toggle {
-      display: none;
-    }
+    .menu-toggle { display: none; }
 
     /* HERO */
     .hero {
@@ -208,7 +200,6 @@
       max-width: calc(var(--max-width) + 2.6rem);
       border-radius: 26px;
       box-shadow: var(--shadow);
-      /* Light glass card on top of the taxi image */
       background: radial-gradient(circle at top left, rgba(255, 248, 177, 0.95), rgba(255, 255, 255, 0.92));
       border: 2px solid rgba(252, 211, 77, 0.9);
     }
@@ -590,10 +581,7 @@
       border: 1px solid rgba(252, 211, 77, 0.9);
     }
 
-    .vehicle-info {
-      font-size: 0.93rem;
-      color: #374151;
-    }
+    .vehicle-info { font-size: 0.93rem; color: #374151; }
 
     .vehicle-flex {
       display: flex;
@@ -602,15 +590,8 @@
       gap: 0.12rem;
     }
 
-    .vehicle-meta {
-      margin-top: 0.06rem;
-      font-size: 0.9rem;
-    }
-
-    .vehicle-meta strong {
-      color: #b91c1c;
-      font-weight: 600;
-    }
+    .vehicle-meta { margin-top: 0.06rem; font-size: 0.9rem; }
+    .vehicle-meta strong { color: #b91c1c; font-weight: 600; }
 
     .book-group {
       display: flex;
@@ -648,55 +629,7 @@
       color: #f9fafb;
       box-shadow: 0 10px 24px rgba(22, 163, 74, 0.45);
     }
-
     .wa-btn:hover { background: #15803d; }
-
-    /* FLEET SECTION */
-    .fleet-cards {
-      display: flex;
-      gap: 1.6rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 1.4rem;
-    }
-
-    .fleet-card {
-      background: rgba(255, 255, 255, 0.96);
-      border-radius: var(--card-radius);
-      box-shadow: var(--shadow);
-      padding: 1.05rem;
-      width: 190px;
-      text-align: center;
-      margin-bottom: 1.3rem;
-      border: 1px solid rgba(252, 211, 77, 0.8);
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
-      color: var(--dark);
-      flex: 1 1 160px;
-      max-width: 210px;
-    }
-
-    .fleet-card:hover {
-      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.22);
-      border-color: rgba(220, 38, 38, 0.85);
-      transform: translateY(-4px);
-      background: #fffdf2;
-    }
-
-    .fleet-card img {
-      width: 60px;
-      margin: 0 auto 0.45rem;
-    }
-
-    .fleet-type {
-      font-weight: 700;
-      color: #b91c1c;
-      margin-bottom: 0.16rem;
-    }
-
-    .fleet-info {
-      font-size: 0.9rem;
-      color: #374151;
-    }
 
     /* CTA STRIP */
     .cta-strip {
@@ -764,9 +697,7 @@
       font-size: 0.9rem;
     }
 
-    input,
-    select,
-    textarea {
+    input, select, textarea {
       width: 100%;
       padding: 0.7rem 0.8rem;
       border: 1px solid #d1d5db;
@@ -777,19 +708,14 @@
       transition: border var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
     }
 
-    input:focus,
-    select:focus,
-    textarea:focus {
+    input:focus, select:focus, textarea:focus {
       border: 1.6px solid #facc15;
       box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.4);
       background: #ffffff;
       outline: none;
     }
 
-    textarea {
-      min-height: 70px;
-      resize: vertical;
-    }
+    textarea { min-height: 70px; resize: vertical; }
 
     .form-submit {
       background: linear-gradient(135deg, #ffd600, #f97316);
@@ -871,7 +797,6 @@
 
     .footer-links a {
       color: #fee2e2;
-      text-decoration: none;
       display: block;
       margin-bottom: 0.35rem;
       font-size: 0.9rem;
@@ -953,11 +878,11 @@
       box-shadow: 0 20px 48px rgba(220, 38, 38, 0.9);
     }
 
-    /* NEW DARK MODE – clean charcoal with yellow/red accents */
+    /* DARK MODE – clean charcoal with yellow/red accents */
     body.dark-mode {
       background-color: #050505;
       background-image:
-        linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.94)),
+        linear-gradient(rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.92)),
         url("bg image.png");
       color: #e5e5e5;
     }
@@ -968,17 +893,9 @@
       border-bottom-color: rgba(0, 0, 0, 0.8);
     }
 
-    body.dark-mode nav a {
-      color: #f9fafb;
-    }
-
-    body.dark-mode nav a::after {
-      background: linear-gradient(90deg, #facc15, #fb923c);
-    }
-
-    body.dark-mode nav.nav-open {
-      background: rgba(17, 17, 17, 0.97);
-    }
+    body.dark-mode nav a { color: #f9fafb; }
+    body.dark-mode nav a::after { background: linear-gradient(90deg, #facc15, #fb923c); }
+    body.dark-mode nav.nav-open { background: rgba(17, 17, 17, 0.97); }
 
     body.dark-mode .mode-toggle {
       border-color: rgba(250, 204, 21, 0.7);
@@ -987,20 +904,11 @@
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
     }
 
-    body.dark-mode .mode-toggle:hover {
-      background: #facc15;
-      color: #111111;
-    }
-
-    body.dark-mode .quick-book-btn,
-    body.dark-mode .cta-btn {
-      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.75);
-    }
+    body.dark-mode .mode-toggle:hover { background: #facc15; color: #111111; }
 
     body.dark-mode .hero,
     body.dark-mode .usp-section,
     body.dark-mode .service-card,
-    body.dark-mode .fleet-card,
     body.dark-mode .quick-book-form,
     body.dark-mode .policy-block,
     body.dark-mode .modal-content,
@@ -1011,15 +919,12 @@
       box-shadow: 0 22px 46px rgba(0, 0, 0, 0.85);
     }
 
-    body.dark-mode .hero-title {
-      color: #f9fafb;
-    }
+    body.dark-mode .hero-title { color: #f9fafb; }
 
     body.dark-mode .hero-sub,
     body.dark-mode .hero-note,
     body.dark-mode .service-desc,
     body.dark-mode .usp-desc,
-    body.dark-mode .fleet-info,
     body.dark-mode .quick-book-form p,
     body.dark-mode .policy-block,
     body.dark-mode .vehicle-info {
@@ -1044,25 +949,14 @@
       color: #e5e5e5;
     }
 
-    body.dark-mode .cta-strip {
-      background: linear-gradient(135deg, #7f1d1d, #b91c1c);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.85);
-    }
-
     body.dark-mode footer {
       background: #050505;
       border-top-color: #111111;
       box-shadow: 0 -12px 28px rgba(0, 0, 0, 0.95);
     }
 
-    body.dark-mode .footer-links a {
-      color: #e5e7eb;
-    }
-
-    body.dark-mode .footer-bottom {
-      border-top-color: #111111;
-      color: #9ca3af;
-    }
+    body.dark-mode .footer-links a { color: #e5e7eb; }
+    body.dark-mode .footer-bottom { border-top-color: #111111; color: #9ca3af; }
 
     body.dark-mode input,
     body.dark-mode select,
@@ -1082,9 +976,7 @@
 
     /* RESPONSIVE */
     @media (max-width: 1024px) {
-      .navbar {
-        gap: 0.4rem;
-      }
+      .navbar { gap: 0.4rem; }
     }
 
     @media (max-width: 900px) {
@@ -1096,28 +988,24 @@
         align-items: center;
       }
 
-      .hero-content {
-        max-width: 100%;
-      }
-
-      .hero-meta {
-        justify-content: center;
-      }
+      .hero-content { max-width: 100%; }
+      .hero-meta { justify-content: center; }
     }
 
     @media (max-width: 850px) {
-      .usp-section,
-      .section { padding: 0 0.8rem; }
-
+      .usp-section, .section { padding: 0 0.8rem; }
       .navbar { padding: 0.9rem 1rem; }
-
-      .usp-section {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
+      .usp-section { justify-content: center; }
     }
 
+    /* IMPORTANT: Mobile background fix (fixed attachment breaks visibility on phones) */
     @media (max-width: 768px) {
+      body {
+        background-attachment: scroll;
+        background-position: 50% 30%;
+        background-size: cover;
+      }
+
       nav {
         position: absolute;
         inset: 58px 1rem auto 1rem;
@@ -1134,9 +1022,7 @@
         transition: opacity var(--transition-med), transform var(--transition-med);
       }
 
-      nav a {
-        color: #111827;
-      }
+      nav a { color: #111827; }
 
       nav.nav-open {
         opacity: 1;
@@ -1144,31 +1030,18 @@
         pointer-events: auto;
       }
 
-      .quick-book-btn {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: inline-flex;
-      }
+      .quick-book-btn { display: none; }
+      .menu-toggle { display: inline-flex; }
 
       .hero {
         padding-top: 2.4rem;
         margin: 1rem 0.8rem 2.2rem;
       }
 
-      .header-right {
-        gap: 0.3rem;
-      }
+      .header-right { gap: 0.3rem; }
+      .logo { font-size: 1.15rem; letter-spacing: 0.08em; }
 
-      .logo {
-        font-size: 1.15rem;
-        letter-spacing: 0.08em;
-      }
-
-      body.dark-mode nav.nav-open {
-        background: rgba(17, 17, 17, 0.97);
-      }
+      body.dark-mode nav.nav-open { background: rgba(17, 17, 17, 0.97); }
     }
 
     @media (max-width: 650px) {
@@ -1177,48 +1050,24 @@
 
     @media (max-width: 600px) {
       .section-title { font-size: 1.45rem; }
-
-      .usp-section {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .fleet-section .fleet-cards {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      footer .footer-content {
-        flex-direction: column;
-        gap: 1.1rem;
-      }
-
+      .usp-section { flex-direction: column; gap: 1rem; }
+      footer .footer-content { flex-direction: column; gap: 1.1rem; }
       .service-grid { grid-template-columns: 1fr; }
-
       .hero-inner { padding: 0 1.2rem; }
     }
 
     @media (max-width: 400px) {
-      .hero {
-        border-radius: 18px;
-        padding: 2.3rem 0 2rem;
-      }
+      .hero { border-radius: 18px; padding: 2.3rem 0 2rem; }
+      .hero-title { font-size: 2rem; }
 
-      .hero-title {
-        font-size: 2rem;
-      }
-
-      .floating-whatsapp,
-      .floating-instagram {
+      .floating-whatsapp, .floating-instagram {
         width: 50px;
         height: 50px;
         font-size: 1.6rem;
         right: 12px;
       }
 
-      .floating-instagram {
-        bottom: 80px;
-      }
+      .floating-instagram { bottom: 80px; }
     }
   </style>
 </head>
@@ -1227,14 +1076,14 @@
   <header>
     <div class="navbar">
       <span class="logo">
-        <span class="logo-mark">NM</span>
+
+        <img class="logo-img" src="NM Logo.jpeg" alt="NM Travels Logo">
         NM Travels
       </span>
 
       <nav id="mainNav">
         <a href="#home">Home</a>
         <a href="#services">Services</a>
-        <a href="#fleet">Fleet</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
         <a href="#privacy">Privacy</a>
@@ -1459,7 +1308,6 @@
         <div class="vehicle-grid">`;
 
       s.vehicles.forEach(v => {
-        // Friendly WhatsApp message with car details
         let msgLines = [
           "Hi NM Travels,",
           "",
@@ -1486,8 +1334,7 @@
           "Thank you."
         );
 
-        let msg = msgLines.join("\n");
-        let encodedMsg = encodeURIComponent(msg);
+        let encodedMsg = encodeURIComponent(msgLines.join("\n"));
         let waUrl = `https://wa.me/919916807431?text=${encodedMsg}`;
 
         html += `<div class="vehicle-card">
@@ -1528,7 +1375,6 @@
       if (event.target == document.getElementById("serviceModal")) closeModal();
     }
 
-    // Booking form JS
     function bookFormHander() {
       const form = document.getElementById('bookingForm');
       if (!form) return;
@@ -1544,31 +1390,6 @@
     }
     document.addEventListener('DOMContentLoaded', bookFormHander);
   </script>
-
-  <!-- FLEET -->
-  <section id="fleet" class="section fleet-section">
-    <div class="section-title">Our Fleet</div>
-    <p class="section-subtitle">
-      From solo rides to family trips – choose the right vehicle for your journey.
-    </p>
-    <div class="fleet-cards">
-      <div class="fleet-card">
-        <img src="https://img.icons8.com/color/64/car--v1.png" alt="Hatchback">
-        <div class="fleet-type">Hatchback</div>
-        <div class="fleet-info">Up to 4 seats, AC, city comfort. Ideal for solo/couple travel.</div>
-      </div>
-      <div class="fleet-card">
-        <img src="https://img.icons8.com/color/64/sedan.png" alt="Sedan">
-        <div class="fleet-type">Sedan</div>
-        <div class="fleet-info">For families, premium interiors, 4 seats, ample luggage space.</div>
-      </div>
-      <div class="fleet-card">
-        <img src="https://img.icons8.com/color/64/suv.png" alt="SUV">
-        <div class="fleet-type">SUV</div>
-        <div class="fleet-info">6 seats, long rides, extra luggage, AC.</div>
-      </div>
-    </div>
-  </section>
 
   <!-- ABOUT -->
   <section id="about" class="section">
@@ -1666,7 +1487,7 @@
       <a href="mailto:mailnmtravels@gmail.com" style="color:#b91c1c; text-decoration:none;">
         mailnmtravels@gmail.com
       </a><br>
-      <i class="fa-solid fa-location-dot"></i> No.15, MG Road, Bangalore, Karnataka<br>
+      <i class="fa-solid fa-location-dot"></i> No.10/21, Ibbaluru, HSR Post, Sarjapura Outer Ring, Bangalore-560102.<br>
       <b>Working Hours:</b> 24/7 Service<br>
     </div>
   </section>
@@ -1714,15 +1535,15 @@
       <div class="footer-block">
         <div><b>Contact</b></div>
         <div>+91 99168 07431<br>mailnmtravels@gmail.com</div>
-        <div>No. 15, MG Road, Bangalore</div>
+        <div>No.10/21, Ibbaluru, HSR Post, Sarjapura Outer Ring, Bangalore-560102.</div>
         <div class="socials">
           <a
             href="https://wa.me/919916807431?text=Hi%20NM%20Travels%2C%0A%0AI%20would%20like%20to%20book%20a%20cab.%0A%0APlease%20connect%20with%20me%20to%20confirm%20the%20details."
             target="_blank">
             <i class="fa-brands fa-whatsapp"></i>
           </a>
-          <a href="https://www.instagram.com/gubbi.1481?igsh=MTBmbGJwZGszMjg1dA==" target="_blank">
-            <i class="fa-brands fa-instagram"></i>
+          <a href="target="_blank">
+            <i class="fa-brands fa-instahttps://www.instagram.com/nmtravels1?igsh=MTdiYjZvZHdkOWE3Zg=="gram"></i>
           </a>
           <a href="#"><i class="fa-brands fa-facebook"></i></a>
         </div>
@@ -1744,7 +1565,7 @@
 
   <!-- Floating Instagram -->
   <a
-    href="https://www.instagram.com/gubbi.1481?igsh=MTBmbGJwZGszMjg1dA=="
+    href="https://www.instagram.com/nmtravels1?igsh=MTdiYjZvZHdkOWE3Zg=="
     class="floating-instagram"
     title="Instagram profile"
     target="_blank">
