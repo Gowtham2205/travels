@@ -6,17 +6,15 @@
   <title>NM Travels</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <style>
     :root {
-      --primary: #ffd600;          /* Bright yellow */
-      --accent: #dc2626;           /* Vivid red */
+      --primary: #ffd600;        
+      --accent: #dc2626; 
       --dark: #111111;
       --gray: #fff7cc;
       --white: #ffffff;
       --navy: #dc2626;
 
-      /* ✅ Subtle BLACK shadows (no white glow) */
       --shadow-soft: 0 12px 28px rgba(0, 0, 0, 0.14);
       --shadow-med: 0 16px 40px rgba(0, 0, 0, 0.18);
 
@@ -30,8 +28,7 @@
     html { scroll-behavior: smooth; }
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; height: auto; display: block; }
-
-    /* ✅ Background image auto-adjust (no fixed “messing” on resize) */
+    
     body {
       font-family: 'Roboto', sans-serif;
       background-color: var(--gray);
@@ -41,7 +38,7 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-attachment: scroll; /* ✅ fixed often breaks on mobile/resizes */
+      background-attachment: scroll;
       color: var(--dark);
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
@@ -58,7 +55,7 @@
       background: linear-gradient(90deg, #ffd600, #dc2626);
       position: sticky;
       top: 0;
-      z-index: 3000; /* ✅ keep header always on top */
+      z-index: 3000; 
       backdrop-filter: blur(12px);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
       border-bottom: 1px solid rgba(255, 255, 255, 0.35);
@@ -363,7 +360,6 @@
       opacity: 0.95;
     }
 
-    /* ✅ Professional sections: ONE clean container per section (no “double box” look) */
     .section {
       max-width: var(--max-width);
       margin: 1.8rem auto;
@@ -373,7 +369,7 @@
     .section-card {
       background: rgba(255, 255, 255, 0.94);
       border-radius: 22px;
-      box-shadow: var(--shadow-soft); /* ✅ black subtle */
+      box-shadow: var(--shadow-soft); 
       border: 1px solid rgba(0, 0, 0, 0.08);
       padding: 1.6rem 1.4rem;
       backdrop-filter: blur(6px);
@@ -399,8 +395,7 @@
       margin: 0 auto;
       line-height: 1.35;
     }
-
-    /* SERVICES */
+    
     .service-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -454,7 +449,6 @@
       font-weight: 600;
     }
 
-    /* ✅ USP (smaller + professional grid) */
     .usp-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -495,8 +489,7 @@
       color: #374151;
       line-height: 1.25;
     }
-
-    /* MODAL */
+    
     .modal {
       position: fixed;
       z-index: 2500;
@@ -639,7 +632,6 @@
     }
     .wa-btn:hover { background: #15803d; }
 
-    /* CTA STRIP */
     .cta-strip {
       background: linear-gradient(135deg, #dc2626, #b91c1c);
       color: var(--white);
@@ -758,7 +750,6 @@
       font-weight: 600;
     }
 
-    /* Footer */
     footer {
       background: var(--navy);
       color: var(--white);
@@ -834,7 +825,6 @@
       opacity: 0.95;
     }
 
-    /* Floating buttons */
     .floating-whatsapp,
     .floating-instagram {
       position: fixed;
@@ -964,14 +954,12 @@
     }
 
     @media (max-width: 768px) {
-      /* ✅ Background image behaves cleanly (no over-zoom “mess”) */
       body,
       body.dark-mode {
         background-size: contain;
         background-position: top center;
       }
 
-      /* Mobile nav dropdown */
       nav {
         position: fixed;
         left: 12px;
@@ -1000,8 +988,7 @@
 
       .quick-book-btn { display: none; }
       .menu-toggle { display: inline-flex; }
-
-      /* ✅ Keep HERO bg unchanged (your instruction) */
+      
       .hero {
         margin: 0;
         border-radius: 0;
@@ -1055,7 +1042,6 @@
 
       .cta-btn.phone:hover { background: rgba(0,0,0,0.30); color: #ffffff; }
 
-      /* ✅ USP smaller grid */
       .usp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
       body.dark-mode nav.nav-open { background: rgba(17, 17, 17, 0.92); }
@@ -1112,7 +1098,6 @@
           <i class="fa-regular fa-moon"></i>
         </button>
 
-        <!-- ✅ FIXED hamburger: proper type + aria + works on mobile -->
         <button type="button" class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
           <i class="fa-solid fa-bars"></i>
         </button>
@@ -1206,7 +1191,6 @@
     </div>
   </section>
 
-  <!-- ✅ USP (smaller + professional) -->
   <section class="section" aria-label="Why Choose NM Travels">
     <div class="section-card">
       <div class="section-header">
@@ -1239,7 +1223,6 @@
     </div>
   </section>
 
-  <!-- Modal Content for Service Details -->
   <div id="serviceModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
@@ -1278,7 +1261,6 @@
       });
     }
 
-    // ✅ Hamburger FIX: reliable toggle + aria-expanded
     function closeNav() {
       if (!mainNav || !menuToggle) return;
       mainNav.classList.remove('nav-open');
@@ -1652,8 +1634,7 @@
       © 2025 NM Travels. All Rights Reserved.
     </div>
   </footer>
-
-  <!-- Floating WhatsApp -->
+  
   <a
     href="https://wa.me/919916807431?text=Hi%20NM%20Travels%2C%0A%0AI%20would%20like%20to%20book%20a%20cab.%0A%0APlease%20connect%20with%20me%20to%20confirm%20the%20details."
     class="floating-whatsapp"
@@ -1662,7 +1643,6 @@
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- Floating Instagram -->
   <a
     href="https://www.instagram.com/nmtravels1?igsh=MTdiYjZvZHdkOWE3Zg=="
     class="floating-instagram"
@@ -1672,4 +1652,5 @@
   </a>
 </body>
 </html>
+
 
